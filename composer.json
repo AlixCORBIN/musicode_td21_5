@@ -1,0 +1,10 @@
+{
+    "name": "vlucas/phpdotenv",
+    "authors": [
+        {
+            "name": "AlixCORBIN",
+            "email": "alixc72430@gmail.com"
+        }
+    ],
+    "require": {}
+}
