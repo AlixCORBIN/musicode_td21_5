@@ -13,4 +13,16 @@ class Music extends Model {
             return [];
         }
     }
+
+    public function create($titre, $artiste, $album, $duree) {
+        $sql = "INSERT INTO musics (titre, artiste, album, duree) VALUES (:titre, :artiste, :album, :duree)";
+        $stmt = $this->db->prepare($sql);
+        
+        return $stmt->execute([
+            ':titre' => $titre,
+            ':artiste' => $artiste,
+            ':album' => $album,
+            ':duree' => $duree
+        ]);
+    }
 }

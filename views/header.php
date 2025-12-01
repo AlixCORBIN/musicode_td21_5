@@ -7,15 +7,15 @@
     <nav>
         <?php if (isset($_SESSION['user'])): ?>
             <a href="index.php?page=home">Catalogue</a>
-            <a href="index.php?page=music&action=add">Ajouter une musique</a>
+            <a href="index.php?page=ajouterMusique&action=add">Ajouter une musique</a>
             <a href="index.php?page=library">Ma bibliothèque</a>
             <a href="index.php?page=account">Mon compte</a>
-            <a href="index.php?page=auth&action=logout" class="btn-logout">Déconnexion</a>
+            <a href="index.php?page=login&action=logout" class="btn-logout">Déconnexion</a>
         
         <?php else: ?>
             <a href="index.php?page=home">Catalogue</a>
-            <a href="index.php?page=auth&action=login">Connexion</a>
-            <a href="index.php?page=auth&action=register">Inscription</a>
+            <a href="index.php?page=login">Connexion</a>
+            <a href="index.php?page=register">Inscription</a>
         <?php endif; ?>
     </nav>
 </header>
