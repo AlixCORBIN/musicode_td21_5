@@ -2,12 +2,20 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+if (file_exists(__DIR__ . '/.env')) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+}
 
 spl_autoload_register(function ($class) {
-    if (file_exists("app/controllers/$class.php")) {
-        require_once "app/controllers/$class.php";
+    $path = __DIR__ . "/controller/$class.php";
+    
+    if (!file_exists($path)) {
+        $path = __DIR__ . "/controller/" . lcfirst($class) . ".php";
+    }
+
+    if (file_exists($path)) {
+        require_once $path;
     }
 });
 
@@ -22,11 +30,10 @@ if (class_exists($controllerName)) {
         $controller->$action();
     } else {
         http_response_code(404);
-        echo "Action non trouvée";
+        echo "Action '$action' non trouvée dans $controllerName";
     }
 } else {
     http_response_code(404);
-    echo "Page non trouvée";
+    echo "Contrôleur '$controllerName' non trouvé. Vérifiez que le fichier existe dans le dossier controller/";
 }
-
 ?>
