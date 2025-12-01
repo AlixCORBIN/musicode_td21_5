@@ -8,19 +8,8 @@
 </head>
 <body>
 
-    <header>
-        <div class="brand">
-            <i class="fa-solid fa-play-circle" style="font-size: 2rem;"></i>
-            <h1>Musicode</h1>
-        </div>
-        
-        <nav>
-            <a href="index.php?page=home">Catalogue</a>
-            <a href="#">Connexion</a>
-            <a href="#">Inscription</a>
-        </nav>
-    </header>
-
+    <?php require_once 'header.php'; ?>
+    
     <main class="container">
         <section class="catalogue-header">
             <h2>Catalogue des musiques</h2>
@@ -51,9 +40,7 @@
         </div>
     </main>
 
-    <footer>
-        <p>© 2025 Musicode · IUT Laval - R3.01 Développement web 2025-2026.</p>
-    </footer>
+    <?php require_once 'footer.php'; ?>
 
 </body>
 </html>
