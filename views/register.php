@@ -15,7 +15,7 @@
         <div class="login-card">
             <h1>Inscription</h1>
             
-            <form action="index.php?page=auth&action=store_user" method="POST">
+            <form action="index.php?page=register&action=store" method="POST">
                 
                 <div class="input-group">
                     <label for="username">Nom d'affichage</label>

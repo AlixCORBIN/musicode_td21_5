@@ -15,7 +15,7 @@
         <div class="login-card">
             <h1>Connexion</h1>
 
-            <form action="index.php?page=auth&action=login" method="POST">
+            <form action="index.php?page=login&action=check" method="POST">
 
                 <div class="input-group">
                     <label for="email">Adresse e-mail</label>

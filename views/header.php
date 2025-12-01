@@ -14,8 +14,8 @@
         
         <?php else: ?>
             <a href="index.php?page=home">Catalogue</a>
-            <a href="index.php?page=login">Connexion</a>
-            <a href="index.php?page=register">Inscription</a>
+            <a href="index.php?page=auth&action=login">Connexion</a>
+            <a href="index.php?page=auth&action=register">Inscription</a>
         <?php endif; ?>
     </nav>
 </header>
