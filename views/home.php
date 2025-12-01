@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<<<<<<< HEAD
+=======
+  <header>
+    <div class="brand">
+        <img src="../img/Musicode-1.svg" alt="Logo Musicode" width="100">
+        <h1><?php echo $title; ?></h1>
+    </div>
+    
+>>>>>>> main
 
     <header>
         <div class="brand">
