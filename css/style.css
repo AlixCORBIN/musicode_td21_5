@@ -1,19 +1,19 @@
 /* --- BASE & HEADER --- */
 body {
-  font-family: 'Segoe UI', 'Arial', sans-serif;
-  background: #F8FAFC;
-  margin: 0;
-  padding: 0;
-  color: #1E293B;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: #F8FAFC;
+    margin: 0;
+    padding: 0;
+    color: #1E293B;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
   background: linear-gradient(90deg, #7DD3FC 0%, #818CF8 100%);
   color: #fff;
-  padding: 0.8rem 2rem; /* Un peu moins haut pour être élégant */
+  padding: 1rem 2rem;
   display: flex; 
   align-items: center;        
   justify-content: space-between;
@@ -21,9 +21,9 @@ header {
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 /* Style de l'icône Play noire */
@@ -41,7 +41,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -49,36 +49,20 @@ header h1 {
 nav {
   display: flex;
   gap: 24px;
-  align-items: center;
 }
 
 nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  opacity: 0.9;
-  transition: opacity 0.2s;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
 }
 
 nav a:hover {
   opacity: 1;
-}
-
-/* Bouton Déconnexion (Style blanc) */
-.btn-logout {
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #4F46E5 !important; /* Texte bleu violet */
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.2s;
-}
-
-.btn-logout:hover {
-    background-color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-decoration: underline;
 }
 
 /* --- LE RESTE DU CSS (Container, Cards, etc.) --- */
@@ -86,11 +70,23 @@ nav a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    flex: 1;
+    flex: 1; /* Pousse le footer vers le bas */
     width: 100%;
     box-sizing: border-box;
 }
 
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 2em 0;
+    font-size: .9em;
+    border-top: 1px solid #E2E8F0;
+    color: #64748B;
+    background: #fff;
+    width: 100%;
+}
+
+/* --- Styles du Catalogue (Grille et Cartes) --- */
 .catalogue-header {
     margin-bottom: 2rem;
 }
@@ -169,13 +165,220 @@ nav a:hover {
     font-size: 0.8rem;
 }
 
-footer {
-  text-align: center;
-  margin-top: auto; 
-  padding: 2em 0;
-  font-size: .9em;
-  border-top: 1px solid #E2E8F0;
-  color: #64748B;
-  background: #fff;
-  width: 100%;
+
+.page-add-music {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748B;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #1E293B;
+}
+
+.music-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid #E2E8F0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.music-form input[type="text"],
+.music-form input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.music-form input:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.duration-inputs {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.duration-inputs .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+.duration-inputs span {
+    font-size: 0.75rem;
+    color: #94A3B8;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.duration-inputs .separator {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #CBD5E1;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #0369a1;
+}
+
+@media (min-width: 640px) {
+    .btn-primary {
+        width: auto; 
+    }
+}
+
+
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; 
+    padding: 20px 0;
+}
+
+.login-card {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
+    text-align: left;
+}
+
+.login-card h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #1E293B;
+    font-weight: 700;
+    text-align: center;
+}
+
+.login-card .input-group {
+    margin-bottom: 20px;
+}
+
+.login-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #64748B;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid transparent;
+    background-color: #EEF5FF;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.login-card input:focus {
+    background-color: #fff;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, #38BDF8 0%, #818CF8 100%);
+    transition: opacity 0.2s;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #94A3B8;
+    text-align: center;
+}
+
+.register-link a {
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, #8B5CF6 0%, #A78BFA 100%);
+    transition: opacity 0.2s;
+}
+
+.btn-register:hover {
+    opacity: 0.9;
 }
