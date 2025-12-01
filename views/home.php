@@ -12,7 +12,7 @@ $description = "Aucune description";
 <body>
   <header>
     <div class="brand">
-        <img src="Musicode-1.svg" alt="Logo Musicode" width="100">
+        <img src="../img/Musicode-1.svg" alt="Logo Musicode" width="100">
         <h1><?php echo $title; ?></h1>
     </div>
     
