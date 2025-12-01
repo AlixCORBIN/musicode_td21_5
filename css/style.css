@@ -1,19 +1,19 @@
 /* --- BASE & HEADER --- */
 body {
-    font-family: 'Segoe UI', 'Arial', sans-serif;
-    background: #F8FAFC;
-    margin: 0;
-    padding: 0;
-    color: #1E293B;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: #F8FAFC;
+  margin: 0;
+  padding: 0;
+  color: #1E293B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   background: linear-gradient(90deg, #7DD3FC 0%, #818CF8 100%);
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   display: flex; 
   align-items: center;        
   justify-content: space-between;
@@ -21,27 +21,27 @@ header {
 }
 
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 /* Style de l'icône Play noire */
 .logo-icon {
-    background-color: #0F172A; /* Fond noir/bleu nuit */
+    background-color: #0F172A;
     color: white;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px; /* Coins arrondis */
+    border-radius: 8px;
     font-size: 0.9rem;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -49,44 +49,49 @@ header h1 {
 nav {
   display: flex;
   gap: 24px;
+  align-items: center;
 }
 
 nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    opacity: 0.9;
-    transition: opacity 0.2s;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: opacity 0.2s;
 }
 
 nav a:hover {
   opacity: 1;
-  text-decoration: underline;
 }
 
-/* --- LE RESTE DU CSS (Container, Cards, etc.) --- */
+/* Bouton Déconnexion (Style blanc) */
+.btn-logout {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #4F46E5 !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- MAIN CONTAINER --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    flex: 1; /* Pousse le footer vers le bas */
+    flex: 1;
     width: 100%;
     box-sizing: border-box;
 }
 
-footer {
-    text-align: center;
-    margin-top: auto;
-    padding: 2em 0;
-    font-size: .9em;
-    border-top: 1px solid #E2E8F0;
-    color: #64748B;
-    background: #fff;
-    width: 100%;
-}
-
-/* --- Styles du Catalogue (Grille et Cartes) --- */
+/* --- TITRE DE SECTION --- */
 .catalogue-header {
     margin-bottom: 2rem;
 }
@@ -102,12 +107,14 @@ footer {
     margin-top: 0;
 }
 
+/* --- GRILLE DES CARTES --- */
 .grid-catalogue {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
 }
 
+/* --- CARTE DESIGN --- */
 .card {
     background: #fff;
     border-radius: 12px;
@@ -143,6 +150,7 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+/* --- PIED DE CARTE --- */
 .card-footer {
     display: flex;
     justify-content: space-between;
@@ -165,62 +173,80 @@ footer {
     font-size: 0.8rem;
 }
 
-
-.page-add-music {
-    max-width: 800px; 
-    margin: 0 auto;
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  margin-top: auto; 
+  padding: 2em 0;
+  font-size: .9em;
+  border-top: 1px solid #E2E8F0;
+  color: #64748B;
+  background: #fff;
+  width: 100%;
 }
 
+/* --- FORMULAIRES (Ajout Musique, Login, Register) --- */
 .back-link {
+    margin-bottom: 2rem;
+}
+
+.back-link a {
+    color: #64748B;
+    text-decoration: none;
+    font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #64748B;
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-    transition: color 0.2s;
 }
 
-.back-link:hover {
-    color: #1E293B;
-}
-
-.music-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    border: 1px solid #E2E8F0;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+.back-link a:hover {
     color: #334155;
 }
 
-.music-form input[type="text"],
-.music-form input[type="number"] {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #CBD5E1;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    box-sizing: border-box;
-    background-color: #fff;
+.form-section {
+    max-width: 700px;
+    margin: 0; 
 }
 
-.music-form input:focus {
-    border-color: #3B82F6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+.form-header h2 {
+    font-size: 1.8rem;
+    color: #0F172A;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #64748B;
+    margin-bottom: 2.5rem;
+}
+
+.music-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.music-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #1E293B;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: #818CF8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.1);
 }
 
 .duration-inputs {
@@ -232,153 +258,182 @@ footer {
 .duration-inputs .input-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100px;
+    width: 80px;
 }
 
-.duration-inputs span {
+.duration-inputs .small-input {
+    text-align: center;
+}
+
+.duration-inputs .sub-label {
     font-size: 0.75rem;
     color: #94A3B8;
-    margin-top: 5px;
-    text-align: center;
+    margin-top: 4px;
 }
 
 .duration-inputs .separator {
-    font-size: 1.5rem;
+    padding-top: 10px;
     font-weight: bold;
-    color: #CBD5E1;
-    margin-top: 5px;
-}
-
-.btn-primary {
-    background-color: #0284c7;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    width: 100%;
-}
-
-.btn-primary:hover {
-    background-color: #0369a1;
-}
-
-@media (min-width: 640px) {
-    .btn-primary {
-        width: auto; 
-    }
-}
-
-
-.login-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh; 
-    padding: 20px 0;
-}
-
-.login-card {
-    background-color: white;
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid #E2E8F0;
-    text-align: left;
-}
-
-.login-card h1 {
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
-    color: #1E293B;
-    font-weight: 700;
-    text-align: center;
-}
-
-.login-card .input-group {
-    margin-bottom: 20px;
-}
-
-.login-card label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
     color: #64748B;
 }
 
-.login-card input {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid transparent;
-    background-color: #EEF5FF;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    box-sizing: border-box;
-    transition: all 0.2s;
-}
-
-.login-card input:focus {
-    background-color: #fff;
-    border-color: #3B82F6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.btn-login {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
+.btn-primary {
+    background-color: #3B82F6;
     color: white;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #2563EB;
+}
+
+.single-card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.single-card {
+    width: 100%;
+    max-width: 600px; 
+    padding: 2.5rem;
+    text-align: left;
+}
+
+.big-title {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: #0F172A;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #64748B;
+    margin: 0 0 2rem 0;
+}
+
+.details-list p {
+    color: #64748B;
+    margin: 0.5rem 0;
+}
+
+.add-form {
+    margin-top: 2rem;
+}
+
+.btn-big-add {
+    background-color: #818CF8; 
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    background: linear-gradient(90deg, #38BDF8 0%, #818CF8 100%);
-    transition: opacity 0.2s;
+    width: 100%; 
+    transition: background-color 0.2s;
 }
 
-.btn-login:hover {
-    opacity: 0.9;
+.btn-big-add:hover {
+    background-color: #6366F1;
 }
 
-.register-link {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #94A3B8;
-    text-align: center;
-}
-
-.register-link a {
-    color: #3B82F6;
+.btn-add-home {
+    background-color: #E0F2FE; 
+    color: #0284C7; 
     text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 6px;
     font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
 }
 
-.register-link a:hover {
-    text-decoration: underline;
+.btn-add-home:hover {
+    background-color: #BAE6FD;
 }
 
-.btn-register {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
+
+.library-card {
+    min-height: 250px; 
+}
+
+.rating-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.rating-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-group label {
+    color: #64748B;
+    font-size: 0.9rem;
+}
+
+.input-note {
+    width: 50px;
+    padding: 6px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Bouton Mettre à jour (Violet) */
+.btn-update {
+    background-color: #E0E7FF; 
+    color: #4F46E5;
     border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    background: linear-gradient(90deg, #8B5CF6 0%, #A78BFA 100%);
-    transition: opacity 0.2s;
+    transition: background-color 0.2s;
 }
 
-.btn-register:hover {
-    opacity: 0.9;
+.btn-update:hover {
+    background-color: #C7D2FE;
+}
+
+.card-footer-library {
+    margin-top: auto; 
+    padding-top: 1rem;
+}
+
+.btn-remove {
+    background-color: #FEE2E2; 
+    color: #DC2626; 
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%; 
+    transition: background-color 0.2s;
+}
+
+.btn-remove:hover {
+    background-color: #FECACA;
+}
+
+.alert-success {
+    background-color: #DCFCE7;
+    color: #166534;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 0.9rem;
 }

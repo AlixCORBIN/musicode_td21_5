@@ -9,7 +9,7 @@ class Music extends Model {
             $stmt = $this->db->query($sql);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            echo "Erreur SQL dans Music::getAll() : " . $e->getMessage();
+            echo "Erreur SQL : " . $e->getMessage();
             return [];
         }
     }
@@ -17,12 +17,18 @@ class Music extends Model {
     public function create($titre, $artiste, $album, $duree) {
         $sql = "INSERT INTO musics (titre, artiste, album, duree) VALUES (:titre, :artiste, :album, :duree)";
         $stmt = $this->db->prepare($sql);
-        
         return $stmt->execute([
             ':titre' => $titre,
             ':artiste' => $artiste,
             ':album' => $album,
             ':duree' => $duree
         ]);
+    }
+
+    public function getById($id) {
+        $sql = "SELECT * FROM musics WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
