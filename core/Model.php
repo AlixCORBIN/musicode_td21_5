@@ -5,7 +5,7 @@ class Model {
 
     public function __construct() {
         $host = $_ENV['DB_HOST'] ?? 'localhost';
-        $dbname = $_ENV['DB_NAME'] ?? 'sae3.01'; 
+        $dbname = $_ENV['DB_NAME'] ?? 'musicode'; 
         $user = $_ENV['DB_USER'] ?? 'root';
         $pass = $_ENV['DB_PASS'] ?? 'root';
 
