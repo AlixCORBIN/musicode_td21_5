@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -9,11 +10,9 @@ if (file_exists(__DIR__ . '/.env')) {
 
 spl_autoload_register(function ($class) {
     $path = __DIR__ . "/controller/$class.php";
-    
     if (!file_exists($path)) {
         $path = __DIR__ . "/controller/" . lcfirst($class) . ".php";
     }
-
     if (file_exists($path)) {
         require_once $path;
     }
@@ -34,6 +33,6 @@ if (class_exists($controllerName)) {
     }
 } else {
     http_response_code(404);
-    echo "Contrôleur '$controllerName' non trouvé. Vérifiez que le fichier existe dans le dossier controller/";
+    echo "Page non trouvée ($controllerName)";
 }
 ?>

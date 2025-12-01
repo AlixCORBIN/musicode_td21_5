@@ -1,3 +1,4 @@
+/* --- BASE & HEADER --- */
 body {
   font-family: 'Segoe UI', 'Arial', sans-serif;
   background: #F8FAFC;
@@ -12,7 +13,7 @@ body {
 header {
   background: linear-gradient(90deg, #7DD3FC 0%, #818CF8 100%);
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem; /* Un peu moins haut pour être élégant */
   display: flex; 
   align-items: center;        
   justify-content: space-between;
@@ -25,9 +26,22 @@ header {
   gap: 0.75rem;
 }
 
+/* Style de l'icône Play noire */
+.logo-icon {
+    background-color: #0F172A; /* Fond noir/bleu nuit */
+    color: white;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 0.9rem;
+}
+
 header h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -35,6 +49,7 @@ header h1 {
 nav {
   display: flex;
   gap: 24px;
+  align-items: center;
 }
 
 nav a {
@@ -48,9 +63,25 @@ nav a {
 
 nav a:hover {
   opacity: 1;
-  text-decoration: underline;
 }
 
+/* Bouton Déconnexion (Style blanc) */
+.btn-logout {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #4F46E5 !important; /* Texte bleu violet */
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- LE RESTE DU CSS (Container, Cards, etc.) --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
