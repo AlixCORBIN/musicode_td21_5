@@ -7,12 +7,12 @@ $description = "Aucune description";
 <head>
   <meta charset="UTF-8">
   <title><?php echo $title; ?></title>
-  <link rel="stylesheet" href="/musicode_td21_5/style.css">
+  <link rel="stylesheet" href="/musicode_td21_5/css/style.css">
 </head>
 <body>
   <header>
     <div class="brand">
-        <img src="../img/Musicode-1.svg" alt="Logo Musicode" width="100">
+        <img src="/musicode_td21_5/img/Musicode-1.svg" alt="Logo Musicode" width="100">
         <h1><?php echo $title; ?></h1>
     </div>
     
