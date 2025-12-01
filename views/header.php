@@ -6,7 +6,8 @@
         
         <nav>
             <a href="index.php?page=home">Catalogue</a>
-            <a href="#">Connexion</a>
+            <a href="index.php?page=login">Connexion</a>
             <a href="#">Inscription</a>
+
         </nav>
 </header>
